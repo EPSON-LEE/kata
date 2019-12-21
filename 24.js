@@ -60,3 +60,4 @@ var swapPairs = function(head) {
   head.next = swapPairs(nextHead);
   return swapHead;
 };
+// https://juejin.im/post/5958bac35188250d892f5c91#heading-7

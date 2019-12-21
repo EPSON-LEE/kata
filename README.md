@@ -25,3 +25,5 @@ Recoed my leetcode jounrey
 [82-](./82.js)
 
 [83-](./24.js)
+
+## Other
