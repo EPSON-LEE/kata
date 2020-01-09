@@ -10,22 +10,20 @@ Recoed my leetcode jounrey
 
 [3. Longest Substring Without Repeating Characters](./3.js)
 
-[7-](./7.js)
+[7. Reverse Integer](./7.js)
 
-[19-](./19.js)
+[19. Remove Nth Node From End of List](./19.js)
 
-[20-](./20.js)
+[20. Remove Nth Node From End of List](./20.js)
 
-[21-](./21.js)
+[21. Merge Two Sorted Lists](./21.js)
 
-[24-](./24.js)
+[24. Swap Nodes in Pairs](./24.js)
 
-[61-](./61.js)
+[61. Rotate List](./61.js)
 
-[82-](./82.js)
+[82. Remove Duplicates from Sorted List II](./82.js)
 
-[83-](./24.js)
+[83. Remove Duplicates from Sorted List](./83.js)
 
-[1207](./24.js)
-
-## Other
+[1207. Unique Number of Occurrences](./1207.js)
