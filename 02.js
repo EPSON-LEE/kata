@@ -19,7 +19,7 @@
  * Output: 7 -> 0 -> 8
  * Explanation: 342 + 465 = 807.
  */
-function ListNode(val) {
+function ListNode (val) {
   this.val = val
   this.next = null
 }
@@ -31,7 +31,7 @@ l1 = new ListNode(1)
 l2 = new ListNode(9)
 l2.next = new ListNode(9)
 
-var addTwoNumbers = function(l1, l2) {
+var addTwoNumbers = function (l1, l2) {
   var value1,
     value2,
     sum,
