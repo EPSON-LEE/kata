@@ -9,38 +9,44 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var deleteDuplicates = function(head) {
+var deleteDuplicates = function (head) {
   var tempNode = head,
-      arr = []
-  while(tempNode) {
+    arr = []
+  while (tempNode) {
     arr.push(tempNode.val)
     tempNode = tempNode.next
   }
-    head = null
+  head = null
   arr.forEach((item) => {
     if (arr.filter(ele => ele === item).length === 1) {
-        if (!tempNode) {
-          head = tempNode = new ListNode(item)
-        } else {
-            tempNode.next = new ListNode(item)
-            tempNode = tempNode.next
-        }
-        
+      if (!tempNode) {
+        head = tempNode = new ListNode(item)
+      } else {
+        tempNode.next = new ListNode(item)
+        tempNode = tempNode.next
+      }
+
     }
   })
   return head
 };
 
-var deleteDuplicates = function(head) {
-  if(!head) return head
-  if(!head.next) return head
+var deleteDuplicates = function (head) {
+  if (!head) return head
+  if (!head.next) return head
   let set = false
-  while(head.val === head.next.val){
-      set = true
-      head = head.next
-      if(!head) return head
-      if(!head.next) break
+  while (head.val === head.next.val) {
+    set = true
+    head = head.next
+    if (!head) return head
+    if (!head.next) break
   }
   head.next = deleteDuplicates(head.next)
   return set ? head.next : head
 };
+
+
+
+const xhr = new XMLHttpRequest()
+xhr.open(method, url)
+xhr.send(data)
