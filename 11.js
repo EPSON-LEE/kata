@@ -22,15 +22,16 @@ var maxArea = function (height) {
 
 var maxArea = function (height) {
   const len = height.length
-  let max = (len - 1) * Math.min(height[1], height[len - 1]),
-      left = 1,
-      right = len
+  let max = -1,
+      left = 0,
+      right = len - 1
   while (left < right) {
-    result = (right - left) * Math.min(height[left], height[right])
+    max = Math.max(((right - left) * Math.min(height[left], height[right])), max)
     if (height[left] >= height[right]) {
-      right = right - 1
+      right--
     } else {
-      left = left + 1
+      left++
     }
   }
+  return max
 }
