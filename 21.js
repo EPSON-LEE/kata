@@ -11,30 +11,29 @@
  * @return {ListNode}
  */
 var mergeTwoLists = function(l1, l2) {
-  let arr = [],
-      header = null,
-      tempPtr
+  return merge(l1, l2)
+}
 
-  while(l1) {
-    arr.push(l1.val)
-    l1 = l1.next
+const merge = (left, right) => {
+  if(!left || !right) return (left? left:right)
+
+  if (left.val < right.val){
+      left.next = merge(left.next, right);
+      return left;
+  } else {
+      right.next = merge(left, right.next);
+      return right;
   }
+}
 
-  while(l2) {
-    arr.push(l2.val)
-    l2 = l2.next
-  }
-
-
-  arr.sort((a, b) => a - b).forEach((item, index) => {
-    const tempNode = new ListNode(item)
-    if (index === 0) {
-      header = tempPtr = tempNode
-    } else {
-      tempPtr.next = tempNode
-      tempPtr = tempPtr.next
-    }
-  })
-
-  return header
-};
+// var mergeTwoLists = function(l1, l2) {
+//   if(!l1 || !l2) return (l1? l1:l2)
+  
+//   if (l1.val < l2.val){
+//       l1.next = merge(l1.next, l2);
+//       return l1;
+//   } else {
+//       l2.next = merge(l1, l2.next);
+//       return l2;
+//   }
+// }
