@@ -33,5 +33,6 @@ const removeElements = (head, val) => {
     }
   }
 
-  return slow
+  head = slow
+  return head
 }
