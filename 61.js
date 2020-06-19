@@ -10,20 +10,6 @@
  * @param {number} k
  * @return {ListNode}
  */
-// var rotateRight = function(head, k) {
-//   const arr = []
-
-//   // linkedList ->  
-//   while (head) {
-//     arr.push(head.val)
-//     head = head.next
-//   }
-
-//   while(k--) {
-//     arr.shift()
-//   }
-// };
-
   
 //  method - 1 取余
 

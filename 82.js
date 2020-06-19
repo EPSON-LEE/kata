@@ -44,9 +44,3 @@ var deleteDuplicates = function (head) {
   head.next = deleteDuplicates(head.next)
   return set ? head.next : head
 };
-
-
-
-const xhr = new XMLHttpRequest()
-xhr.open(method, url)
-xhr.send(data)
