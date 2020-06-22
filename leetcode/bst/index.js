@@ -19,11 +19,34 @@ console.log(A)
 
 // 三种递归遍历方式
 
+// 前序遍历 递归
+
 const preOrderTreverse = (biTree) => {
   if (biTree === null) return
   console.log(biTree.val)
   preOrderTreverse(bitree.left)
   preOrderTreverse(bitree.right)
+}
+
+// 前序遍历非递归
+
+const inorderTraversal = (root) => {
+
+  const stack = [], ret = []
+  
+  while (root || stack.length) {
+
+    if (root) {
+        stack.push(root)
+        root = root.left
+    } else {
+      root = stack.pop()
+      root && ret.push(root.val)
+      root = root.right
+    }
+  }
+
+  return ret
 }
 
 const inOrderTreverse = (biTree) => {
@@ -42,11 +65,23 @@ const postOrderTreverse = (biTree) => {
 
 // 非递归遍历
 
-// 深度优先
 
+// 深度优先非递归 堆栈 + 二叉树 通过队列长度来控制循环
 
+const depthTreverse = (biTree) => {
 
-// 广度优先 队列 + 二叉树 通过队列长度来控制循环
+  var stack = [], temp
+  stack.push(biTree)
+
+  while (stack.length) {
+    temp = stack.pop()
+    console.log(temp.val)
+    temp.left !== null && stack.push(temp.left)
+    temp.right !== null && stack.push(temp.right)    
+  }
+}
+
+// 广度优先非递归 队列 + 二叉树 通过队列长度来控制循环
 
 const layerTreverse = (biTree) => {
 
@@ -54,7 +89,6 @@ const layerTreverse = (biTree) => {
   queue.push(biTree)
 
   while (queue.length) {
-    debugger
     var node = queue.shift()
     console.log(node.val)
     node.left !== null && queue.push(node.left)
@@ -63,6 +97,30 @@ const layerTreverse = (biTree) => {
 }
 
 layerTreverse(A)
+
+
+const layerTreverse = (biTree) => {
+
+  let queue = [], temp
+  queue.push(biTree)
+
+  while (queue.length) {
+    temp = queue.shift()
+    console.log(temp.val)
+    temp.left !== null && queue.push(temp.left)
+    temp.right !== null && queue.push(temp.right)
+  }
+}
+
+// 求二叉树深度
+
+const maxDeptch = (root) => {
+  const f = (node) => {
+    if (!node) return 0
+    return Math.max(f(node.left), f(node.right)) + 1
+  }
+  return f(root)
+}
 
 // 反转二叉树
 
