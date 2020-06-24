@@ -114,11 +114,12 @@ const layerTreverse = (biTree) => {
 
 // 求二叉树深度
 
+const f = (node) => {
+  if (!node) return 0
+  return Math.max(f(node.left), f(node.right)) + 1
+}
+
 const maxDeptch = (root) => {
-  const f = (node) => {
-    if (!node) return 0
-    return Math.max(f(node.left), f(node.right)) + 1
-  }
   return f(root)
 }
 
